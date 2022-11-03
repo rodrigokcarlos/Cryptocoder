@@ -1,4 +1,4 @@
 # Decoder
 
 
-* forçar reload ao mudar de resolução!
+* forçar reload na página ao mudar de resolução!
