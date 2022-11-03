@@ -1,0 +1,19 @@
+@media (max-width: 850px) {
+    .formInputs{
+        
+        flex-direction: column;
+    }
+    #inputSaida{
+        margin-top: 10px;
+    }
+}
+@media (max-width: 550px) {
+    .group-radio label::before {
+        height: 40px;
+        width: 220px;
+        font-size: 1rem;
+    }
+    .radio1 {
+        flex-direction: column;
+    }
+}

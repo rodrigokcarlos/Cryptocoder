@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html {
+    background: black;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#fundo {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+.bodyVdd {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    color: white;
+}
+.corpo{
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+}
+/* cabeça */
+header{
+    flex: 0.1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+h1 {
+    font-size: 2.7rem;
+    color: #04F404;
+}
+.menu:hover .menuAjuda{
+    display: flex;
+}
+.menuAjuda{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    width: 400px;
+    height: 100px;
+    right: 0;
+    background-color: black;
+    color: #04F404;
+}
+.ajuda{
+    outline: none;
+    color: #04F404;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 3rem;
+    cursor: help;
+}
+/* corpo */
+main {
+    flex: 0.8;
+}
+.formulario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* radio */
+.radio1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.group-radio {
+    display: block;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .group-radio input[type='radio'] {
+    display: none;
+  }
+  
+  .group-radio input[type='radio']:checked + label::before{
+    border: 5px solid #04F404;
+    color: #04F404;
+
+  }
+  
+  .group-radio label,  .group-radio label::before{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .group-radio label::before {
+    background-color: black;
+    border: 2px solid #333;
+    height: 60px;
+    width: 250px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .cesar::before, .group-radio input[type='radio']:checked + .cesar::before{
+    content: 'Cesar';
+  }
+  .b64::before, .group-radio input[type='radio']:checked + .b64::before{
+    content: 'Base64';
+  } 
+
+/* form */
+.formInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.inputs {
+    font-size: 1.4rem;
+    border: 5px solid #04F404;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.inputs:focus{
+    outline: none;
+    box-sizing: border-box;
+}
+.formcima{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cesarNumber{
+    display: none;
+    /*  */
+    width: 200px;
+    height: 60px;
+    font-size: 1.4rem;
+    border: 5px solid #04F404;
+    background-color: black;
+    color: white;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type=number] {
+-moz-appearance: textfield;
+}
+.botaoGo {
+    background-color: rgb(0, 0, 0);
+    border: 5px solid #04F404;
+    color: #04F404;
+    height: 90px;
+    width: 260px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+/* radio 2 */
+.radio2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 5px;
+}
+.codecode {
+    display: block;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .codecode input[type='radio'] {
+    display: none;
+  }
+  
+  .codecode input[type='radio']:checked + label::before{
+    border: 5px solid #04F404;
+    color: #04F404;
+
+  }
+  
+  .codecode label,  .codecode label::before{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .codecode label::before {
+    background-color: black;
+    border: 2px solid #333;
+    height: 60px;
+    width: 250px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .c::before, .codecode input[type='radio']:checked + .c::before{
+    content: 'Codificar';
+  }
+  .d::before, .codecode input[type='radio']:checked + .d::before{
+    content: 'Decodificar';
+  } 
+
+/* pé */
+footer {
+    flex:0.1;
+    font-size: 1rem;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
