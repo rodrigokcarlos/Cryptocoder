@@ -42,6 +42,7 @@ header{
 }
 h1 {
     font-size: 2.7rem;
+    font-weight: 700;
     color: #04F404;
 }
 .menu:hover .menuAjuda{
@@ -51,6 +52,10 @@ h1 {
     display: none;
     flex-direction: column;
     position: absolute;
+    line-height: 25px;
+    text-align: justify;
+    padding: 5px;
+    padding-right: 10px;
     z-index: 3;
     width: 400px;
     height: 100px;
@@ -149,16 +154,16 @@ main {
     align-items: center;
 }
 .cesarNumber{
-    display: none;
-    /*  */
-    width: 200px;
-    height: 60px;
-    font-size: 1.4rem;
-    border: 5px solid #04F404;
-    background-color: black;
-    color: white;
-    outline: none;
+  width: 200px;
+  height: 60px;
+  padding-left: 10px;
+  font-size: 1.4rem;
+  border: 5px solid #04F404;
+  background-color: black;
+  color: white;
+  outline: none;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 -webkit-appearance: none;
@@ -223,10 +228,10 @@ input[type=number] {
     justify-content: center;
     font-weight: bold;
   }
-  .c::before, .codecode input[type='radio']:checked + .c::before{
+  .codifica::before, .codecode input[type='radio']:checked + .c::before{
     content: 'Codificar';
   }
-  .d::before, .codecode input[type='radio']:checked + .d::before{
+  .decodifica::before, .codecode input[type='radio']:checked + .d::before{
     content: 'Decodificar';
   } 
 

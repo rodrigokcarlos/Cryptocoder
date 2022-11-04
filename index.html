@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thecoder</title>
+    <title>Decoder</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
 </head>
@@ -16,10 +16,11 @@
         <div class="corpo">
             <header>
                 <a href="#"></a>
-                <h1>Thecoder</h1>
+                <h1>Cryptocoder</h1>
                 <div class="menu">
                     <a href="#" class="ajuda">?</a>
-                    <div class="menuAjuda">bla bla bla</div>
+                    <div class="menuAjuda">Mensagem Oculta - Para cifrar ou decifrar basta marcar a linguagem de criptografia escolhida( no caso da cifra de Cesar também escolher a quantidade), escrever a mensagem e apertar em Converter!
+                    </div>
                 </div>
             </header>
             <main>
@@ -28,28 +29,28 @@
                         <div class="radio1">
 
                             <div class="group-radio">
-                                <input id="cesar" type="radio" name="radiocifra" checked>
+                                <input id="cesar" type="radio" name="radiocifra" onclick="someCesar()" checked>
                                 <label for="cesar" class="cesar"></label>
                             </div>
                             <div class="group-radio">
-                                <input id="b64" type="radio" name="radiocifra">
+                                <input id="b64" type="radio" name="radiocifra" onclick="someCesar()">
                                 <label for="b64" class="b64"></label>
                             </div>
                         </div>
-                        <input type="number" class="cesarNumber">
+                        <input type="number" class="cesarNumber" pattern="[0-9]">
                     </div>
                     <div class="formInputs">
                         <textarea name=""  id="inputEntrada" class="inputs" maxlength="250"></textarea>
                         <div class="radio2">
                             <div class="codecode">
-                                <input id="sem" type="radio" name="radio" value="sem" checked>
-                                <label for="sem" class="c"></label>
+                                <input id="codifica" type="radio" name="radiodecode" checked>
+                                <label for="codifica" class="codifica"></label>
                             </div>
                             <div class="codecode">
-                                <input id="com" value="aa" type="radio" name="radio">
-                                <label for="com" class="d"></label>
+                                <input id="decodifica"type="radio" name="radiodecode">
+                                <label for="decodifica" class="decodifica"></label>
                             </div>
-                            <button class="botaoGo">Converter</button>
+                            <button class="botaoGo" type="submit" onclick="codeDecode()">Converter</button>
                         </div>
                         <textarea name=""  id="inputSaida" class="inputs" maxlength="250"></textarea>                        
                     </div>
@@ -58,5 +59,6 @@
             <footer>2022 Decoder &copy; Rodrigo Carlos</footer>
         </div>
     </div>
+    <script src="decode.js"></script>
 </body>
 </html>
