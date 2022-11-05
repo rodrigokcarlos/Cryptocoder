@@ -51,51 +51,65 @@ let maiusculo = /[A-Z]/;
 // funçao de codificar cesar
 function cesar(cifraCesar, quantidade) {
     let palavra = [];
-    const regexp = cifraCesar.replace(/([\u0300-\u036f]|[^ a-zA-Z])/g, '');
-    let palavraComoArr = regexp.split('');
+    let palavraComoArr = cifraCesar.split('');
+    const testRg = (/[a-zA-Z]/);
     for (let i = 0; i < palavraComoArr.length; i++) {
-        for (let y = 0; y < cifra.length; y++) {
-            if( y < 0) {
-
+        if(testRg.test(palavraComoArr[i])){
+            for (let y = 0; y < cifra.length; y++) {
+                if(maiusculo.test(palavraComoArr[i]) && palavraComoArr[i].toLowerCase() === cifra[y]){
+                    if(Math.sign(y + quantidade) == -1){
+                        let calc = cifra.length + ((y + quantidade)%cifra.length)
+                        palavra += cifra[calc].toUpperCase();
+                    }else{
+                        palavra += cifra[(y + quantidade)%cifra.length].toUpperCase();
+                    }
+                }else if(palavraComoArr[i] === cifra[y]){
+                    if(Math.sign(y + quantidade) == -1){
+                        let calc = cifra.length + ((y + quantidade)%cifra.length)
+                        palavra += cifra[calc];
+                    }else{
+                        palavra += cifra[(y + quantidade)%cifra.length]
+                    }
+              }
             }
-            if(palavraComoArr[i] == ' '){
-                palavra += ' ';
-                break;
-            }else if(maiusculo.test(palavraComoArr[i]) && palavraComoArr[i].toLowerCase() === cifra[y]){
-                console.log(cifra[(y + quantidade)%26])
-                palavra += cifra[(y + quantidade)%26].toUpperCase();  
-            }else if(palavraComoArr[i] === cifra[y]){
-                palavra += cifra[(y + quantidade)%26];
-          }
+        }else {
+            palavra += palavraComoArr[i];
         }
     }
-    console.log(palavra)
     saida = palavra;
-    return
+    return saida;
 }
 // função de decodificar cesar
 function decifraCesar(cifrado, quantidade) {
     let palavra = [];
-    const regexp = cifrado.normalize('NFD').replace(/([\u0300-\u036f]|[^ a-zA-Z])/g, '');
-    let palavraComoArr = regexp.split('');
+    let palavraComoArr = cifrado.split('');
+    const testRg = (/[a-zA-Z]/);
     for (let i = 0; i < palavraComoArr.length; i++) {
-        for (let y = 0; y < cifra.length; y++) {
-            if(palavraComoArr[i] == ' '){
-                palavra += ' ';
-                break;
-            }else if(maiusculo.test(palavraComoArr[i]) && palavraComoArr[i].toLowerCase() === cifra[y]){
-                console.log((y - quantidade)%26)
-                // palavra += cifra[(y - quantidade)%26].toUpperCase();
-            }else if(palavraComoArr[i] === cifra[y]){
-                palavra += cifra[(y - quantidade)%26];
-          }
+        if(testRg.test(palavraComoArr[i])){
+            for (let y = 0; y < cifra.length; y++) {
+                if(maiusculo.test(palavraComoArr[i]) && palavraComoArr[i].toLowerCase() === cifra[y]){
+                    if(Math.sign(y - quantidade) == -1){
+                        let calc = cifra.length + ((y - quantidade)%cifra.length)
+                        palavra += cifra[calc].toUpperCase();
+                    }else{
+                        palavra += cifra[(y - quantidade)%cifra.length].toUpperCase();
+                    }
+                }else if(palavraComoArr[i] === cifra[y]){
+                    if(Math.sign(y - quantidade) == -1){
+                        let calc = cifra.length + ((y - quantidade)%cifra.length)
+                        palavra += cifra[calc];
+                    }else{
+                        palavra += cifra[(y - quantidade)%cifra.length]
+                    }
+                }
+            }
+        }else {
+            palavra += palavraComoArr[i];
         }
     }
-    console.log(palavra)
     saida = palavra;
-    return
+    return saida;
 }
-
 
 // texto para base64
 function codaBase64(texto) {
@@ -108,6 +122,3 @@ function decifraBase64(texto) {
     saida = atob(texto);
     return 
 }
-// console.log(codaBase64('Bala de Hortelã'));
-// console.log(decifraBase64('QmFsYSBkZSBIb3J0ZWzj'))
-

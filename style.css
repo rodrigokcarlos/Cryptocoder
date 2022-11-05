@@ -156,8 +156,8 @@ main {
 .cesarNumber{
   width: 200px;
   height: 60px;
-  padding-left: 10px;
   font-size: 1.4rem;
+  text-align: center;
   border: 5px solid #04F404;
   background-color: black;
   color: white;
