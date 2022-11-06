@@ -11,9 +11,37 @@
     .group-radio label::before {
         height: 40px;
         width: 220px;
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     .radio1 {
         flex-direction: column;
+    }
+
+}
+@media (max-width: 300px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .ajuda{
+        font-size: 2rem;
+
+    }
+    .menuAjuda{
+        line-height: 20px;
+        font-size: 0.8rem;
+        width: 260px;
+        height: 100px;
+    }
+    .inputs {
+        max-width: 220px;
+        padding: 0;
+    }
+    .formInputs{
+        align-items: center;
+    }
+}
+@media (max-height: 680px) {
+    html {
+        overflow-y: visible;
     }
 }

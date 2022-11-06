@@ -12,6 +12,19 @@ const codifica = pegaDom('#codifica');
 const decodifica = pegaDom('#decodifica');
 const botaoGo = pegaDom('.botaoGo');
 
+
+// numero válido
+const regexNumber = /[0-9]/;
+function aceitaNumero(){
+    if(!regexNumber.test(cesarNumero.value)){
+        console.log(parseInt(cesarNumero.value))
+        cesarNumero.style.border = '5px solid red';
+        cesarNumero.placeholder = 'Insira um Numero!';
+    }else {
+        cesarNumero.style.border = '5px solid #04F404';
+        console.log('alo')
+    }
+}
 // função de parametro para cifra de cesar
 function someCesar() {
     if (radioCesar.checked) {

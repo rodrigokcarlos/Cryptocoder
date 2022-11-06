@@ -20,7 +20,7 @@
                 <h1>Cryptocoder</h1>
                 <div class="menu">
                     <a href="#" class="ajuda">?</a>
-                    <div class="menuAjuda">Mensagem Oculta - Para cifrar ou decifrar basta marcar a linguagem de criptografia escolhida( no caso da cifra de Cesar também escolher a quantidade), escrever a mensagem e apertar em Converter!
+                    <div class="menuAjuda">Cryptocoder - Para cifrar ou decifrar basta marcar a linguagem de criptografia escolhida( no caso da cifra de Cesar também escolher a quantidade), escrever a mensagem e apertar em Converter!
                     </div>
                 </div>
             </header>
@@ -38,7 +38,9 @@
                                 <label for="b64" class="b64"></label>
                             </div>
                         </div>
-                        <input type="number" class="cesarNumber" pattern="[0-9]">
+                        <div class="tamanho">
+                            <input type="number" class="cesarNumber" onblur="aceitaNumero()">
+                        </div>
                     </div>
                     <div class="formInputs">
                         <textarea name=""  id="inputEntrada" class="inputs" maxlength="250"></textarea>
@@ -51,7 +53,7 @@
                                 <input id="decodifica"type="radio" name="radiodecode">
                                 <label for="decodifica" class="decodifica"></label>
                             </div>
-                            <button class="botaoGo" type="submit" onclick="codeDecode()">Converter</button>
+                            <button class="botaoGo" type="submit" onclick="codeDecode(); aceitaNumero()">Converter</button>
                         </div>
                         <textarea name=""  id="inputSaida" class="inputs" maxlength="250" disabled></textarea>                        
                     </div>

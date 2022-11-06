@@ -90,6 +90,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 .group-radio {
     display: block;
@@ -153,6 +154,9 @@ main {
     flex-direction: column;
     align-items: center;
 }
+.tamanho{
+  height: 70px;
+}
 .cesarNumber{
   width: 200px;
   height: 60px;
@@ -186,6 +190,9 @@ input[type=number] {
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
+}
+.botaoGo:active {
+  transform: scale(1.034);
 }
 /* radio 2 */
 .radio2 {
